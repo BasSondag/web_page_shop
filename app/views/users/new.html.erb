@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 ">
+			<h1>Create an Account:</h1>
+		</div>
+	</div>
+	<div class="row">
+		
+		<% if flash[:errors] %>
+			<h3><ul>
+		  	<% flash[:errors].each do |error| %>
+    			<li><%= error %></li>
+		  	<% end %>
+			</ul></h3>
+		<% end %>
+		<div class="col-md-6 ">
+			<form class="form-inline"  action="/users" method="post">
+				<div class="col-md-6">
+					<div class="form-group">
+						<input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
+						Email: <br>
+						<input id="email" class="form-control" type="email" name="user[email]"><br>
+						First Name: <br>
+						<input class="form-control" id="first_name" type="text" name="user[first_name]"><br>
+						Last Name: <br>
+						<input class="form-control" id="last_name" type="text" name="user[last_name]"><br>
+						Password:<br>
+						<input class="form-control" id="password"type="password" name="user[password]"><br>
+						Confirm Password:<br>
+						<input class="form-control" id="password_confirmation" type="password" name="user[password_confirmation]"><br>
+					</div>	
+					<br>
+					<br>
+					<button type="submit" class="btn btn-success btn-lg">
+						Sign Up
+					</button>
+				</div>	
+			</form>
+			<br>
+			<br>
+			<h3>If you already have an account log In</h3>
+	 		<a href="/sessions/new" class="btn btn-primary btn-lg" role="button" >Log In</a>
+		</div>
+	</div>
+</div>
