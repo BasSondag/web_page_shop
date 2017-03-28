@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-8 ">
+			<h1>Log In:</h1>
+		</div>
+	</div>
+	<div class="row">
+		
+		<% if flash[:errors] %>
+			<h3><ul>
+		  	<% flash[:errors].each do |error| %>
+    			<li><%= error %></li>
+		  	<% end %>
+			</ul></h3>
+		<% end %>
+		<div class="col-md-6 ">
+			<form class="form-inline"  action="/users" method="post">
+				<div class="col-md-6">
+					<div class="form-group">
+						<input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
+						Email: <br>
+						<input id="email" class="form-control" type="email" name="user[email]"><br>
+						Password:<br>
+						<input class="form-control" id="password"type="password" name="user[password]"><br>
+					</div>	
+					<br>
+					<br>
+					<button type="submit" class="btn btn-success btn-lg">
+						Log In
+					</button>
+				</div>	
+			</form>
+			<br>
+			<br>
+			<h3>If you Don't have an account Sign Up First</h3>
+	 		<a href="/users/new" class="btn btn-primary btn-lg" role="button" >Sign Up</a>
+		</div>
+	</div>
+</div>
