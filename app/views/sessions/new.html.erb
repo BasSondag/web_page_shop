@@ -14,14 +14,14 @@
 			</ul></h3>
 		<% end %>
 		<div class="col-md-6 ">
-			<form class="form-inline"  action="/users" method="post">
+			<form class="form-inline"  action="/sessions" method="post">
 				<div class="col-md-6">
 					<div class="form-group">
 						<input type = "hidden" name = "authenticity_token" value = "<%= form_authenticity_token %>">
 						Email: <br>
-						<input id="email" class="form-control" type="email" name="user[email]"><br>
+						<input id="email" class="form-control" type="email" name="email"><br>
 						Password:<br>
-						<input class="form-control" id="password"type="password" name="user[password]"><br>
+						<input class="form-control" id="password"type="password" name="password"><br>
 					</div>	
 					<br>
 					<br>

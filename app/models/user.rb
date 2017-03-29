@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
 	validates :first_name, :last_name, :email, :password, :password_confirmation, presence: true
 	validates :first_name, :last_name, length: { in: 2..25 }
 	validates :email, format: {with: email_regex}, uniqueness: {:case_sensitive => false}
-	validates :password, confirmation: true, length: {in: 8..20}
+	validates :password, confirmation: true, length: {in: 8..40}
 	validates :password , format: {with: password_format,
-		message: "must include at least one lowercase letter, one uppercase letter, and one digit"}
+		message: "must include at least one lowercase letter, one uppercase letter, one symbol and one digit"}
 
 end
