@@ -18,9 +18,12 @@ ActiveRecord::Schema.define(version: 20170328223144) do
 
   create_table "admins", force: true do |t|
     t.boolean  "administrator"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "admins", ["user_id"], name: "index_admins_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "first_name"
